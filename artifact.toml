@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Gradient Generator"
+version = "1.0.0"
+id = "artifacts/gradient-generator"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24131
+
+[services.development]
+run = "pnpm --filter @workspace/gradient-generator run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/gradient-generator", "run", "build" ]
+publicDir = "artifacts/gradient-generator/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24131"
+BASE_PATH = "/"

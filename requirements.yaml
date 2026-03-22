@@ -1,0 +1,10 @@
+packages:
+  "framer-motion": "For smooth layout animations and micro-interactions"
+  "clsx": "For conditional class merging"
+  "tailwind-merge": "For merging tailwind classes without conflicts"
+
+images: []
+
+notes:
+  - "The app operates entirely client-side without a backend."
+  - "Canvas API is used for exporting the gradient as a PNG image locally."
